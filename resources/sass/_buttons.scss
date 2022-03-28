@@ -1,0 +1,63 @@
+.dropdown-item:active {
+    color: $second-color;
+    background-color: $brand-color-dark;
+    border-color: $brand-color-dark;
+}
+
+.btn-primary, .btn-info, .show > .btn-info.dropdown-toggle {
+    color: $second-color;
+    background-color: $brand-color;
+    border-color: $brand-color;
+
+    &:hover, &:active {
+        color: $second-color;
+        background-color: $brand-color-dark;
+        border-color: $brand-color-dark;
+    }
+
+    &:focus {
+        background-color: $brand-color-dark;
+        border-color: rgba($brand-color, 0.25);
+        box-shadow: 0 0 0 0.25rem rgba($brand-color, 0.25);
+    }
+
+    &:active:focus {
+        box-shadow: 0 0 0 0.25rem rgba($brand-color, 0.25);
+    }
+
+    &:not(:disabled):not(.disabled):active, 
+    &:not(:disabled):not(.disabled).active {
+        color: $second-color;
+        background-color: $brand-color-dark;
+        border-color: $brand-color-dark;
+    }
+
+    &:not(:disabled):not(.disabled):active:focus, 
+    &:not(:disabled):not(.disabled).active:focus,
+    &.dropdown-toggle:focus {
+        box-shadow: 0 0 0 0.25rem rgba($brand-color, 0.25);
+    }
+}
+
+.btn-check:focus + .btn, .btn:focus {
+    box-shadow: 0 0 0 0.25rem rgba($brand-color, 0.25);
+}
+
+.btn-link {
+    color: $brand-color;
+
+    &:hover {
+        color: $brand-color-dark;
+    }
+}
+
+.btn-row {
+    display: flex; 
+    justify-content: flex-end; 
+    align-items: center;
+    width: 100%;
+
+    a, .text-info {
+        color: $second-color !important;
+    }
+}

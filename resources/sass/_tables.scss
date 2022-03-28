@@ -1,0 +1,45 @@
+table {
+    .table-img {
+        max-width: 5rem;
+    }
+
+    > td {
+        padding: 32rem !important;
+        vertical-align: middle;
+    }
+}
+
+.admin-card {
+
+    .admin-card-header {
+    
+        h4, h5 {
+            margin-bottom: 0;
+        }
+    
+        code {
+            color: $brand-color;
+    
+            h5 {
+                font-size: 0.9rem;
+            }
+        }
+    }
+    
+    .admin-card-body {
+        padding: 0;
+    
+        table {
+            margin-bottom: 0;
+    
+            thead {
+                background-color: $first-color-light;
+                color: $second-color;
+            }
+    
+            th, td {
+                vertical-align: middle;
+            }
+        }
+    }
+}

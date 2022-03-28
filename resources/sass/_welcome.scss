@@ -1,0 +1,68 @@
+#welcome-bg {
+    background: rgba($brand-color, 0.5);
+    max-width: 100% !important;
+    width: 100% !important;
+    display: flex;
+
+    #welcome-container {
+        width: 50rem;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    
+        #welcome-text {
+            .section-title {
+                border-bottom: none;
+                color: $second-color;
+                margin: 0 0 2rem 0;
+            }
+    
+            p {
+                color: $second-color;
+            }
+
+            .card {
+                border-radius: 1rem;
+                
+                .card-body {
+                    padding: 2rem;
+
+                    .row {
+                        display: flex;
+                        justify-content: space-between;
+        
+                        .btn-link {
+                            text-align: left;
+                            padding: 1rem 0 0 0;
+                        }
+                    }
+                }
+            }
+        }
+    
+        #welcome-img {
+            & > svg {
+                fill: $second-color;
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    #welcome-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & > div {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #welcome-text {
+            margin-bottom: 4rem;
+        }
+    }
+}

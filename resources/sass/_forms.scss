@@ -1,0 +1,93 @@
+form {
+    .form-control {
+
+        &:focus {
+            color: $first-color;
+            background-color: $second-color;
+            border-color: rgba($brand-color, 0.25);
+            outline: 0;
+            box-shadow: 0 0 0 0.25rem rgba($brand-color, 0.25);
+        }
+    }
+
+    .form-check-input {
+        appearance: auto; /* DON'T DELETE, important! */
+        background: $second-color;
+        border-color: $first-color-light;  
+        height: 1rem;
+        width: 1rem;
+                           
+        &:checked {
+            background-color: $brand-color;
+        }
+    
+        &:hover, &:active, &:focus {
+            box-shadow: 0 0 0 0.25rem rgba($brand-color, 0.25);
+        }
+    }
+}
+
+.form-group {
+    input#image {
+        padding: 0.2rem;
+    }
+}
+
+.admin-card {
+    .btn a {
+        color: $second-color !important;
+    }
+}
+
+.create-container {
+    margin: 0 auto;
+
+    .form-container {
+        background: $second-color;   
+        border-radius: 10px;
+        width: 25rem;
+        margin: 0 auto;
+        padding: 1.5rem 2rem;
+        box-shadow: 0 2px 2px 0.1rem rgba($first-color, 0.2);
+        
+        form {
+            .form-control,
+            .gj-datepicker-bootstrap [role=right-icon] button,
+            .border {
+                border: 1px solid $first-color-light !important;
+    
+                &:focus {
+                    border-color: $brand-color;
+                    box-shadow: 0 0 0 0.25rem rgba($brand-color, 0.25);
+                }   
+            }
+        }
+    }
+}
+
+/* ---- Datepicker ---- */
+
+.pika-lendar {
+
+    .is-today .pika-button {
+        color: $brand-color !important;
+        font-weight: bold;
+    }
+    
+    .is-selected .pika-button, .has-event .pika-button {
+        color: $second-color;
+        font-weight: bold;
+        background: rgba($brand-color, 0.4) !important;
+        box-shadow: inset 0 1px 3px rgba($brand-color, 0.8) !important;
+        border-radius: 3px;
+    }
+
+    .pika-button:hover, .pika-row.pick-whole-week:hover .pika-button {
+        color: $second-color;
+        background: rgba($brand-color, 0.4) !important;
+        box-shadow: none;
+        border-radius: 3px;
+    }
+}
+
+/* ---- End datepicker ---- */

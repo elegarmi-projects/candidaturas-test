@@ -1,0 +1,40 @@
+body {
+    background: $body-bg;
+    color: $first-color;
+    line-height: $line-height-base;
+
+    .navbar-brand {
+        font-weight: 100;
+        text-transform: uppercase;
+        letter-spacing: 0.15rem;
+    }
+
+    a, .nav-link {
+        color: $brand-color;
+        text-decoration: none;
+
+        &:hover, &:focus {
+            color: $brand-color-dark;
+            text-decoration: none;
+        }
+    }
+
+    .text-info {
+        color: $brand-color !important;
+    }
+
+    .section-title {
+        border-bottom: 1px solid $first-color-light; 
+        font-size: 2rem;
+        font-weight: 100;
+        text-transform: uppercase;
+        line-height: 0.1em;
+        letter-spacing: 0.15rem;
+        word-spacing: 0.4rem;
+    
+        .section-title-line {
+            background: $body-bg;
+            padding: 0 10px 0 0; 
+        }
+    }
+}

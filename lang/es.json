@@ -1,0 +1,7 @@
+{
+    ":attribute debe contener al menos una letra.": ":attribute debe contener al menos una letra.",
+    ":attribute debe contener al menos un número.": ":attribute debe contener al menos un número.",
+    ":attribute debe contener al menos un símbolo.": ":attribute debe contener al menos un símbolo.",
+    ":attribute debe contener al menos una mayúscula y una minúscula.": ":attribute debe contener al menos una mayúscula y una minúscula.",
+    ":attribute ha aparecido en el registro de datos. Por favor, escoja :attribute diferente.": ":attribute ha aparecido en el registro de datos. Por favor, escoja :attribute diferente."
+}

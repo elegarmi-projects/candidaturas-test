@@ -1,0 +1,29 @@
+// Reset
+@import 'reset';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+// Variables
+@import 'variables';
+
+// Custom styles
+// ----Components
+@import './components/cards';
+
+// ----Views
+@import 'user';
+@import 'welcome';
+
+// ----Structure
+@import 'tables';
+@import 'forms';
+@import 'buttons';
+@import 'custom';
+@import 'footer';
+@import 'nav';
+@import 'layout';

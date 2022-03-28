@@ -1,0 +1,57 @@
+// TYPOGRAPHY
+$principal-font     : 'Roboto', sans-serif;
+$font-size-base     : 1rem;
+$line-height-base   : 1.6;
+
+// COLORS
+$body-bg            : #F9F9F9;
+$brand-color        : #FC4702;
+$brand-color-dark   : #e64100;
+$first-color        : #222222;
+$first-color-light  : #6C757D;
+$second-color       : #fffafa;  
+
+// Livewire styles variables
+$card-cap-bg: #ffffff;
+$input-group-addon-bg: #ffffff;
+$input-placeholder-color: #adb5bd;
+
+/* $card-bg: #FC4702; */
+
+$navbar-dark-toggler-border-color: transparent;
+$navbar-light-toggler-border-color: transparent;
+
+$list-group-action-active-bg: #f8f9fa;
+
+// SIZES
+$border-radius: 0.5rem;
+$border-radius-sm: 1rem;
+$border-radius-md: 1.5rem;
+$border-radius-lg: 2rem;
+$custom-checkbox-indicator-border-radius: 0.25rem;
+$card-inner-border-radius: 0.5rem;
+$card-border-radius: 0.5rem;
+
+// POSITION
+$navbar-toggler-padding-x: 0;
+$navbar-toggler-padding-0: 0;
+$list-group-item-padding-x: 1rem;
+
+// STATE
+$enable-validation-icons: false;
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  
+    $first-color  : #E5E5E5;
+    $second-color : #222222;  
+  
+}
+
+/* High contrast */
+@media (prefers-contrast: high) {
+
+    $first-color  : black;
+    $second-color : white; 
+
+}
