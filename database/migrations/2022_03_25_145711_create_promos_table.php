@@ -15,12 +15,13 @@ return new class extends Migration
     {
         Schema::create('promos', function (Blueprint $table) {
             $table->id();
+            $table->string('school_id');
             $table->string('name');
             $table->string('ubication');
             $table->date('start_date');
             $table->integer('duration');
-            $table->string('url');
             $table->string('image');
+            $table->string('url');
             $table->string('code');
             $table->timestamps();
         });

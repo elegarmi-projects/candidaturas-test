@@ -1,18 +1,12 @@
 <form wire:submit.prevent="save">
     <div class="form-group">
-        <label for="schools-select">Escoger escuela</label>
-        {{-- <select wire:model="escuela_id" class="form-control form-select" name="schools-select" aria-label="Schools select" required>@error('escuela_id') <span class="error text-danger">{{ $message }}</span> @enderror
-            <option selected disabled>Escuela</option>
+        <label for="school_id">Escuela</label>
+        <select wire:model="school_id" class="form-control form-select" name="school_id" required>
+            <option value="0">Escoger escuela...</option>
             @foreach($schools as $school)
             <option value="{{$school->id}}">{{$school->name}}</option>
             @endforeach
-        </select> --}}
-        <select wire:model="school.id" class="form-control form-select" name="schools[]" aria-label="Schools select" required>@error('school.id') <span class="error text-danger">{{ $message }}</span> @enderror
-            <option selected disabled>Escoger escuela...</option>
-            @foreach($schools as $school)
-            <option value="{{$school->id}}">{{$school->name}}</option>
-            @endforeach
-        </select>
+        </select>@error('school_id') <span class="error text-danger">{{ $message }}</span> @enderror
     </div>
     <div class="form-group">
         <label for="name">Nombre</label>

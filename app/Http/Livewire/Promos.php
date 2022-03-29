@@ -15,7 +15,7 @@ class Promos extends Component
     use WithFileUploads;
 
 	protected $paginationTheme = 'bootstrap';
-    public $selected_id, $keyWord, $name, $ubication, $start_date, $duration, $url, $image, $code;
+    public $selected_id, $keyWord, $school_id, $name, $ubication, $start_date, $duration, $url, $image, $code;
     public $updateMode = false;
 
     public function render()
@@ -23,7 +23,8 @@ class Promos extends Component
 		$keyWord = '%'.$this->keyWord .'%';
 
         return view('livewire.promos.view', [
-            'promos' => Promo::oldest()
+            'promos' => Promo::with('school')
+                        ->orWhere('school_id', 'LIKE', $keyWord)
                         ->orWhere('name', 'LIKE', $keyWord)
                         ->orWhere('ubication', 'LIKE', $keyWord)
                         ->orWhere('start_date', 'LIKE', $keyWord)
@@ -34,6 +35,26 @@ class Promos extends Component
 						->paginate(10),
             'schools' => School::all()
         ]);
+
+
+        // $schools = School::all();
+        // $promos = Promo::with('school')->get();
+        // return view('livewire.promos.view', compact('promos', 'schools'));
+
+        
+        // return view('livewire.promos.view', [
+        //     'promos' => Promo::oldest()
+        //                 ->orWhere('school_id', 'LIKE', $keyWord)
+        //                 ->orWhere('name', 'LIKE', $keyWord)
+        //                 ->orWhere('ubication', 'LIKE', $keyWord)
+        //                 ->orWhere('start_date', 'LIKE', $keyWord)
+        //                 ->orWhere('duration', 'LIKE', $keyWord)
+        //                 ->orWhere('image', 'LIKE', $keyWord)
+        //                 ->orWhere('url', 'LIKE', $keyWord)
+        //                 ->orWhere('code', 'LIKE', $keyWord)
+		// 				->paginate(10),
+        //     'schools' => School::all()
+        // ]);
     }
 	
     public function cancel()
@@ -44,6 +65,7 @@ class Promos extends Component
 	
     private function resetInput()
     {	
+        $this->school_id = null;
         $this->name = null;	
         $this->ubication = null;
         $this->start_date = null;
@@ -56,6 +78,7 @@ class Promos extends Component
     public function store()
     {
         $this->validate([
+            'school_id' => 'required|not_in:0',
             'name' => 'required',
             'ubication' => 'required',
             'start_date' => 'required',
@@ -66,6 +89,7 @@ class Promos extends Component
         ]);
 
         Promo::create([ 
+            'school_id' => $this->school_id,
             'name' => $this->name,
             'ubication' => $this->ubication,
             'start_date' => $this->start_date,
@@ -85,6 +109,7 @@ class Promos extends Component
         $record = Promo::findOrFail($id);
 
         $this->selected_id = $id; 
+        $this->school_id = $record->school_id;
         $this->name = $record->name;
         $this->ubication = $record->ubication;
         $this->start_date = $record->start_date;
@@ -99,6 +124,7 @@ class Promos extends Component
     public function update()
     {
         $this->validate([
+            'school_id' => 'required|not_in:0',
             'name' => 'required',
             'ubication' => 'required',
             'start_date' => 'required',
@@ -111,6 +137,7 @@ class Promos extends Component
         if ($this->selected_id) {
 			$record = Promo::find($this->selected_id);
             $record->update([
+                'school_id' => $this->school_id,
                 'name' => $this->name,
                 'ubication' => $this->ubication,
                 'start_date' => $this->start_date,
